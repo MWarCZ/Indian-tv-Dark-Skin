@@ -1,0 +1,168 @@
+
+$bg-page-wrapper: #1b1b1b;
+$bg-header-menu: #000;
+
+body {
+	color: #fff;
+
+	////////////////////////////////////////
+	// Horni cast webu
+	.header { 
+  	background-color: $bg-header-menu;
+  	border-bottom: 1px solid #2b2b2b;
+  	
+  	h1 {
+  		a {
+  			overflow: hidden;
+  			border-radius: 0 0 5px 5px;
+  		}
+  	}
+	}
+ .menu {
+  	background-color: $bg-header-menu;
+  	border-bottom: 1px solid #2b2b2b;
+  }
+ 
+	////////////////////////////////////////
+	// Horni pruh s novinkama
+	.flashnews {
+  	// color: #505050;
+	}
+
+	////////////////////////////////////////
+	// Menu
+
+	.menu {
+		ul {
+			li {
+				a {
+					color: #d2cece;
+					text-shadow: #990000 1px 1px 10px;
+					&:hover {
+						color: #ff0000;
+					}
+				}
+				&.active {
+					a {
+						color: #ff0000;
+					}
+				}
+			}
+		}
+
+		.menu-user {
+			li.user {
+				.dropdown-toggle {
+					strong {
+						font-weight: 600;
+						color: #d2cece;
+					}
+				}
+			}
+		}
+	}
+	.dropdown-menu {
+  	background-color: #1b1b1b;
+  	color: #d2cece;
+  	border-radius: 4px 4px 8px 8px;
+  	overflow: hidden;
+
+  	a {
+  		&:hover { 
+  			background-color: #4b4b4b;
+  			color: #d2cece!important;
+  		}
+  	}
+	}
+
+	////////////////////////////////////////
+	// Pozadi webu
+	.page-wrapper {
+		background-color: $bg-page-wrapper;
+	}
+	.carousel {
+  	background-color: $bg-page-wrapper;
+	}
+
+	////////////////////////////////////////
+	// Panel s tremi nejzajimavejsimi prispevky
+	.carousel {
+		.captions {
+			.caption {
+				div {
+					background-color: #000;
+				}
+			}
+		}
+	}
+
+	////////////////////////////////////////
+	// Nadpis pred clanky
+	
+	h2.box {
+  	background-color: #290101;
+  	li {
+  		a {
+  			color: #d2cece;
+  		}
+  	}
+	}
+	
+	// Clanky
+	.contentbox {
+		background-color: black;
+		color: white;
+
+		.contentbox-wrapper {
+			.contentbox-header {
+				a { // Nadpis clanku
+					&:not(.btn) {
+						color: white
+					}
+				}
+				small { // Kdy bylo publikovano
+					color: white;
+				}
+			}
+		}
+	}
+
+	.page-right {
+		.sidebox {
+			background-color: #290101;
+		}
+		.box {
+			background-color: #290101;
+
+			.box-reviews {
+				.item {
+					a {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+////////////////////////////////////
+ 
+.text-primary {
+		color: #ff4400!important;
+}
+a {
+	color: #ff4400;
+
+	&:hover {
+		color: #ffff00;
+	}
+
+	&.text-primary {
+		&:focus, &:hover {
+			color: #ffff00!important;
+		}
+	}
+}
+
+
+
