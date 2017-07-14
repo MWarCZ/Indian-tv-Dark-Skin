@@ -2,7 +2,7 @@
 $bg-verydark: #000;
 $bg-dark: #1b1b1b;
 $bg-darkred: #290101;
-
+$bg-darkblue: #000317;
 
 $fg-verylight: #fff;
 $fg-light: #d2cece;
@@ -11,173 +11,221 @@ $fg-link: #ff2200;
 $fg-link-hover: #ffaa00;
 
 body {
-	color: $fg-verylight;
+  color: $fg-verylight;
 
-	////////////////////////////////////////
-	// Horni cast webu
-	.header { 
-  	background-color: $bg-verydark;
-  	border-bottom: 1px solid lighten($bg-dark, 35%);
-  	
-  	h1 {
-  		a {
-  			overflow: hidden;
-  			border-radius: 0 0 5px 5px;
-  		}
-  	}
-	}
+  ////////////////////////////////////////
+  /// Horni cast webu
+  .header { 
+    background-color: $bg-verydark;
+    border-bottom: 1px solid lighten($bg-dark, 35%);
+    
+    h1 {
+      a {
+        overflow: hidden;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
  .menu {
-  	background-color: $bg-verydark;
-  	border-bottom: 1px solid lighten($bg-dark, 35%);
+    background-color: $bg-verydark;
+    border-bottom: 1px solid lighten($bg-dark, 35%);
   }
  
-	////////////////////////////////////////
-	// Horni pruh s novinkama
-	.flashnews {
-  	color: #505050;
-	}
+  ////////////////////////////////////////
+  /// Horni pruh s novinkama
+  .flashnews {
+    color: #505050;
+  }
 
-	////////////////////////////////////////
-	// Menu
+  ////////////////////////////////////////
+  /// Menu
 
-	.menu {
-		ul {
-			li {
-				a {
-					color: $fg-light;
-					text-shadow: #990000 1px 1px 10px;
-					&:hover {
+  .menu {
+    ul {
+      li {
+        a {
+          color: $fg-light;
+          text-shadow: #990000 1px 1px 10px;
+          &:hover {
             color: $fg-link;
-					}
-				}
-				&.active {
-					a {
-						color: $fg-link;
+          }
+        }
+        &.active {
+          a {
+            color: $fg-link;
             
-					}
-				}
-			}
-		}
+          }
+        }
+      }
+    }
 
-		.menu-user {
-			li.user {
-				a.dropdown-toggle {
-					strong {
-						font-weight: 600;
-						color: $fg-light;
+    .menu-user {
+      li.user {
+        a.dropdown-toggle {
+          strong {
+            font-weight: 600;
+            color: $fg-light;
 
-					}
+          }
           &:hover {
             strong {
               color: $fg-link;
             }
           }
-				}
-			}
-		}
-	}
-	.dropdown-menu {
-  	background-color: $bg-dark;
-  	color: $fg-light;
-  	border-radius: 4px 4px 8px 8px;
-  	overflow: hidden;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    background-color: $bg-dark;
+    color: $fg-light;
+    border-radius: 4px 4px 8px 8px;
+    overflow: hidden;
 
-  	a {
-  		&:hover { 
-  			background-color: lighten($bg-dark, 19%);
-  			color: $fg-light!important;
-  		}
-  	}
-	}
+    a {
+      &:hover { 
+        background-color: lighten($bg-dark, 19%);
+        color: $fg-light!important;
+      }
+    }
+  }
 
-	////////////////////////////////////////
-	// Pozadi webu
-	.page-wrapper {
-		background-color: $bg-dark;
-	}
-	.carousel {
-  	background-color: $bg-dark;
-	}
+  ////////////////////////////////////////
+  /// Pozadi webu
+  .page-wrapper {
+    background-color: $bg-dark;
+  }
+  .carousel {
+    background-color: $bg-dark;
+  }
 
-	////////////////////////////////////////
-	// Panel s tremi nejzajimavejsimi prispevky
-	.carousel {
-		.captions {
-			.caption {
-				div {
-					background-color: $bg-verydark;
-				}
-			}
-		}
-	}
+  ////////////////////////////////////////
+  /// Panel s tremi nejzajimavejsimi prispevky
+  .carousel {
+    .captions {
+      .caption {
+        div {
+          background-color: $bg-verydark;
+        }
+      }
+    }
+  }
 
-	////////////////////////////////////////
-	// Nadpis pred clanky
-	
-	h2.box {
-  	background-color: $bg-darkred;
-  	li {
-  		a {
-  			color: $fg-light;
-  		}
-  	}
-	}
-	
-	// Clanky
-	.contentbox {
-		background-color: $bg-verydark;
-		color: $fg-light;
+  ////////////////////////////////////////
+  /// Nadpis pred clanky
+  
+  h2.box {
+    background-color: $bg-darkred;
+    li {
+      a {
+        color: $fg-light;
+      }
+    }
+  }
+  
+  //////////////////////////////////
+  /// Nahled clanku
+  .contentbox {
+    background-color: $bg-verydark;
+    color: $fg-light;
 
-		.contentbox-wrapper {
-			.contentbox-header {
-				a { // Nadpis clanku
-					&:not(.btn) {
-						color: $fg-light
-					}
-				}
-				small { // Kdy bylo publikovano
-					color: $fg-light;
-				}
-			}
-		}
-	}
+    .contentbox-wrapper {
+      .contentbox-header {
+        a { /// Nadpis clanku
+          &:not(.btn) {
+            color: $fg-light
+          }
+        }
+        small { /// Kdy bylo publikovano
+          color: $fg-light;
+        }
+      }
+    }
+  }
 
-	.page-right {
-		.sidebox {
-			background-color: $bg-darkred;
-		}
-		.box {
-			background-color: $bg-darkred;
+  /////////////////////////////////
+  /// Bocni pravy panel
+  .page-right {
+    .sidebox {
+      background-color: $bg-darkred;
+    }
+    .box {
+      background-color: $bg-darkred;
 
-			.box-reviews {
-				.item {
-					a {
-						color: $fg-verylight;
-					}
-				}
-			}
-		}
-	}
-}
+      .box-reviews {
+        .item {
+          a {
+            color: $fg-verylight;
+          }
+        }
+      }
+    }
+    .box-blue {
+      background-color: $bg-darkblue;
+    }
+  }
+
+  ////////////////////////////////////////
+  /// Clanek
+  .article {
+    background-color: $bg-verydark;
+    color: $fg-light;
+
+    .article-header {
+      background-color: $bg-darkred;
+      h2 { /// Nadpis clanku
+        strong {
+          color: $fg-light;
+          text-shadow: #ff0000 0px 0px 10px;
+        }
+      }
+      div {
+        p { /// Autor a datum publikovani
+          color: $fg-verylight;
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  
+  .box {
+    background-color: $bg-verydark;
+    .box-header {
+      background-color: $bg-darkred;
+      small { 
+        color: $fg-light;
+      }
+    }
+  }
+
+  /// U komentaru > Doba pred jak dlohou dobou byl napsan prispevek.
+  .box.comments ul.article-comments li .comment-content h4 a:last-of-type {
+    color: darken($fg-light, 20%);
+  }
+
+} // body
 
 ////////////////////////////////////
  
 .text-primary {
-		color: $fg-link!important;
+    color: $fg-link!important;
 }
 a {
-	color: $fg-link;
+  color: $fg-link;
 
-	&:hover {
-		color: $fg-link-hover;
-	}
+  &:hover {
+    color: $fg-link-hover;
+  }
 
-	&.text-primary {
-		&:focus, &:hover {
-			color: $fg-link-hover!important;
-		}
-	}
-}
+  &.text-primary {
+    &:focus, &:hover {
+      color: $fg-link-hover!important;
+    }
+  }
+} // a
+
 
 
 
