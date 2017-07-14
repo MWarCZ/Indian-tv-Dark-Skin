@@ -1,15 +1,23 @@
 
-$bg-page-wrapper: #1b1b1b;
-$bg-header-menu: #000;
+$bg-verydark: #000;
+$bg-dark: #1b1b1b;
+$bg-darkred: #290101;
+
+
+$fg-verylight: #fff;
+$fg-light: #d2cece;
+
+$fg-link: #ff4400;
+$fg-link-hover: #ffff00;
 
 body {
-	color: #fff;
+	color: $fg-verylight;
 
 	////////////////////////////////////////
 	// Horni cast webu
 	.header { 
-  	background-color: $bg-header-menu;
-  	border-bottom: 1px solid #2b2b2b;
+  	background-color: $bg-verydark;
+  	border-bottom: 1px solid lighten($bg-dark, 35%);
   	
   	h1 {
   		a {
@@ -19,14 +27,14 @@ body {
   	}
 	}
  .menu {
-  	background-color: $bg-header-menu;
-  	border-bottom: 1px solid #2b2b2b;
+  	background-color: $bg-verydark;
+  	border-bottom: 1px solid lighten($bg-dark, 35%);
   }
  
 	////////////////////////////////////////
 	// Horni pruh s novinkama
 	.flashnews {
-  	// color: #505050;
+  	color: #505050;
 	}
 
 	////////////////////////////////////////
@@ -36,15 +44,15 @@ body {
 		ul {
 			li {
 				a {
-					color: #d2cece;
+					color: $fg-light;
 					text-shadow: #990000 1px 1px 10px;
 					&:hover {
-						color: #ff0000;
+						//color: #ff0000;
 					}
 				}
 				&.active {
 					a {
-						color: #ff0000;
+						//color: #ff0000;
 					}
 				}
 			}
@@ -55,22 +63,22 @@ body {
 				.dropdown-toggle {
 					strong {
 						font-weight: 600;
-						color: #d2cece;
+						color: $fg-light;
 					}
 				}
 			}
 		}
 	}
 	.dropdown-menu {
-  	background-color: #1b1b1b;
-  	color: #d2cece;
+  	background-color: $bg-dark;
+  	color: $fg-light;
   	border-radius: 4px 4px 8px 8px;
   	overflow: hidden;
 
   	a {
   		&:hover { 
-  			background-color: #4b4b4b;
-  			color: #d2cece!important;
+  			background-color: lighten($bg-dark, 19%);//#4b4b4b;
+  			color: $fg-light!important;
   		}
   	}
 	}
@@ -78,10 +86,10 @@ body {
 	////////////////////////////////////////
 	// Pozadi webu
 	.page-wrapper {
-		background-color: $bg-page-wrapper;
+		background-color: $bg-dark;
 	}
 	.carousel {
-  	background-color: $bg-page-wrapper;
+  	background-color: $bg-dark;
 	}
 
 	////////////////////////////////////////
@@ -90,7 +98,7 @@ body {
 		.captions {
 			.caption {
 				div {
-					background-color: #000;
+					background-color: $bg-verydark;
 				}
 			}
 		}
@@ -100,28 +108,28 @@ body {
 	// Nadpis pred clanky
 	
 	h2.box {
-  	background-color: #290101;
+  	background-color: $bg-darkred;
   	li {
   		a {
-  			color: #d2cece;
+  			color: $fg-light;
   		}
   	}
 	}
 	
 	// Clanky
 	.contentbox {
-		background-color: black;
-		color: white;
+		background-color: $bg-verydark;
+		color: $fg-light;
 
 		.contentbox-wrapper {
 			.contentbox-header {
 				a { // Nadpis clanku
 					&:not(.btn) {
-						color: white
+						color: $fg-light
 					}
 				}
 				small { // Kdy bylo publikovano
-					color: white;
+					color: $fg-light;
 				}
 			}
 		}
@@ -129,15 +137,15 @@ body {
 
 	.page-right {
 		.sidebox {
-			background-color: #290101;
+			background-color: $bg-darkred;
 		}
 		.box {
-			background-color: #290101;
+			background-color: $bg-darkred;
 
 			.box-reviews {
 				.item {
 					a {
-						color: white;
+						color: $fg-verylight;
 					}
 				}
 			}
@@ -148,18 +156,18 @@ body {
 ////////////////////////////////////
  
 .text-primary {
-		color: #ff4400!important;
+		color: $fg-link!important;
 }
 a {
-	color: #ff4400;
+	color: $fg-link;
 
 	&:hover {
-		color: #ffff00;
+		color: $fg-link-hover;
 	}
 
 	&.text-primary {
 		&:focus, &:hover {
-			color: #ffff00!important;
+			color: $fg-link-hover!important;
 		}
 	}
 }
