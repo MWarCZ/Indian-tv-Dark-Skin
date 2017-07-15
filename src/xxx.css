@@ -39,6 +39,8 @@ body.dark {
     background-color: #000; }
     body.dark .carousel .captions .caption div {
       background-color: #000; }
+    body.dark .carousel .captions .caption.active div {
+      background-color: #c72b2b; }
   body.dark h2.box {
     background-color: #290101; }
     body.dark h2.box ul li a {
@@ -50,12 +52,24 @@ body.dark {
       color: #d2cece; }
     body.dark .contentbox .contentbox-wrapper .contentbox-header small {
       color: #d2cece; }
+    body.dark .contentbox .contentbox-wrapper .contentbox-header h3 a:not(.btn) {
+      color: #fff; }
+    body.dark .contentbox .contentbox-wrapper .contentbox-header h3 a.user {
+      color: #ffaa00; }
   body.dark .page-right .sidebox {
     background-color: #290101; }
   body.dark .page-right .box {
     background-color: #290101; }
     body.dark .page-right .box .box-reviews .item a {
       color: #fff; }
+    body.dark .page-right .box .box-favoritegames .item a:not(.btn) {
+      color: #d2cece; }
+    body.dark .page-right .box ul.box-settingslist li a {
+      color: #d2cece; }
+      body.dark .page-right .box ul.box-settingslist li a:hover {
+        color: #fff; }
+    body.dark .page-right .box .box-gameinfo h3 a {
+      color: #d2cece; }
   body.dark .page-right .box-blue {
     background-color: #000317; }
   body.dark .article {
@@ -66,10 +80,14 @@ body.dark {
       body.dark .article .article-header h2 strong {
         color: #d2cece;
         text-shadow: #ff0000 0px 0px 10px; }
+      body.dark .article .article-header h2 span {
+        color: #d2cece; }
       body.dark .article .article-header div p {
         color: #fff; }
         body.dark .article .article-header div p a {
           font-weight: 600; }
+    body.dark .article .article-review .article-review-summary ul li {
+      background-color: #1b1b1b; }
   body.dark .box {
     background-color: #000; }
     body.dark .box .box-header {
@@ -86,6 +104,20 @@ body.dark {
         color: #d2cece; }
       body.dark .filterbox li.active a {
         color: #ff2200; }
+  body.dark .extras-redakce-profile .profile-content h4 small {
+    color: #fff; }
+  body.dark .profile-contacts {
+    color: #1b1b1b; }
+  body.dark .profile .profile-intro .profile-about h3 {
+    color: #fff; }
+    body.dark .profile .profile-intro .profile-about h3 small {
+      color: #d2cece; }
+  body.dark .profile .profile-intro .profile-about .profile-level strong {
+    color: #fff; }
+  body.dark .profile .profile-achievements {
+    color: #1b1b1b; }
+    body.dark .profile .profile-achievements h3 {
+      color: #fff; }
   body.dark .text-primary {
     color: #ff2200 !important; }
   body.dark a {

@@ -1,4 +1,6 @@
 
+$bg-indianred: #c72b2b;
+
 $bg-verydark: #000;
 $bg-dark: #1b1b1b;
 $bg-darkred: #290101;
@@ -110,6 +112,11 @@ body.dark {
           background-color: $bg-verydark;
         }
       }
+      .caption.active {
+        div {
+          background-color: $bg-indianred;
+        }
+      }
     }
   }
 
@@ -143,8 +150,18 @@ body.dark {
         small { /// Kdy bylo publikovano
           color: $fg-light;
         }
+        h3 {
+          a:not(.btn) {
+            color: $fg-verylight;
+          }
+          a.user {
+            color: $fg-link-hover;
+          }
+        }
       }
     }
+
+
   }
 
   /////////////////////////////////
@@ -163,6 +180,32 @@ body.dark {
           }
         }
       }
+      .box-favoritegames {
+        .item {
+          a:not(.btn){
+            color: $fg-light;
+          }
+        }
+      }
+      ul {
+        &.box-settingslist {
+          li {
+            a{
+              color: $fg-light;
+              &:hover {
+                color: $fg-verylight;
+              }
+            }
+          }
+        }
+      }
+      .box-gameinfo {
+        h3 {
+          a {
+            color: $fg-light;
+          }
+        }
+      }
     }
     .box-blue {
       background-color: $bg-darkblue;
@@ -178,9 +221,13 @@ body.dark {
     .article-header {
       background-color: $bg-darkred;
       h2 { /// Nadpis clanku
+        
         strong {
           color: $fg-light;
           text-shadow: #ff0000 0px 0px 10px;
+        }
+        span {
+          color: $fg-light;
         }
       }
       div {
@@ -192,6 +239,17 @@ body.dark {
         }
       }
     }
+
+    .article-review { // recneze
+      .article-review-summary { 
+        ul {
+          li { // Plusy a minusy hry
+            background-color: $bg-dark;
+          }
+        }
+      }
+    }
+
   }
   
   .box {
@@ -223,6 +281,44 @@ body.dark {
       }
     }
   }
+
+  .extras-redakce-profile {
+    .profile-content {
+      h4 {
+        small{
+          color: $fg-verylight;
+        }
+      }
+    }
+  }
+  .profile-contacts {
+    color: $bg-dark;
+  }
+  .profile {
+    .profile-intro {
+      .profile-about {
+        h3 {
+          color: $fg-verylight;
+          small {
+            color: $fg-light;
+          }
+        }
+        .profile-level {
+          strong {
+            color: $fg-verylight;
+          }
+        }
+      }
+    }
+    .profile-achievements {
+      color: $bg-dark;
+      h3 {
+        color: $fg-verylight;
+      }
+    }
+  }
+
+
 
 
 
