@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Indian-tv Dark Skin",
-  "description": "xxx",
+  "description": "Upravuje vzhled stránky 'https://indian-tv.cz' do tmavých barev. !POZOR! Tento doplněk nemusí vždy fungovat správně.",
   "version": "1.2",
 
   "content_scripts": [
@@ -20,6 +20,11 @@
   "browser_action": {
     "default_icon": "indian-red.png",
     "default_title": "Indian-tv Dark Skin"
+  },
+  "icons": { 
+    "16": "indian-red.png",
+    "48": "indian-red.png",
+    "128": "indian-red.png"
   },
 
   "permissions": [
