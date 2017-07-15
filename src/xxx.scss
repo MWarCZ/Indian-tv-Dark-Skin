@@ -10,7 +10,7 @@ $fg-light: #d2cece;
 $fg-link: #ff2200;
 $fg-link-hover: #ffaa00;
 
-body {
+body.dark {
   color: $fg-verylight;
 
   ////////////////////////////////////////
@@ -103,6 +103,8 @@ body {
   /// Panel s tremi nejzajimavejsimi prispevky
   .carousel {
     .captions {
+      background-color: $bg-verydark;
+
       .caption {
         div {
           background-color: $bg-verydark;
@@ -116,9 +118,11 @@ body {
   
   h2.box {
     background-color: $bg-darkred;
-    li {
-      a {
-        color: $fg-light;
+    ul {
+      li {
+        a {
+          color: $fg-light;
+        }
       }
     }
   }
@@ -205,27 +209,50 @@ body {
     color: darken($fg-light, 20%);
   }
 
-} // body
+  .filterbox {
+    background-color: $bg-verydark;
+    li {
+      color: $fg-light;
+      a {
+        color: $fg-light;
+      }
+      &.active {
+        a {
+          color: $fg-link;
+        }
+      }
+    }
+  }
+
+
 
 ////////////////////////////////////
  
-.text-primary {
-    color: $fg-link!important;
-}
-a {
-  color: $fg-link;
-
-  &:hover {
-    color: $fg-link-hover;
+  .text-primary {
+     color: $fg-link!important;
   }
+  a {
+    color: $fg-link;
 
-  &.text-primary {
+    &:hover {
+      color: $fg-link-hover;
+    }
+
     &:focus, &:hover {
-      color: $fg-link-hover!important;
+      &.text-primary {
+        color: $fg-link-hover!important;
+      }
+    }
+  } // a
+
+  .paginator { /// Vyber stranky 1 az N
+    a {
+      color: black!important;
     }
   }
-} // a
 
 
 
+
+} // body
 
