@@ -1,14 +1,17 @@
 {
+
   "manifest_version": 2,
 
   "name": "Indian-tv Dark Skin",
-  "description": "Upravuje vzhled stránky 'https://indian-tv.cz' do tmavých barev. !POZOR! Tento doplněk nemusí vždy fungovat správně.",
-  "version": "1.2",
+  "description": "Doplněk upravuje vzhled webu 'https://indian-tv.cz' do tmavých barev. Ikona doplňku je aktivní pouze na webu 'https://indian-tv.cz'. Při kliknutí na ikonu se dopňěk pozastaví nebo opět spustí. ",
+  "author": "MWarCZ",
+  "version": "2.0",
 
   "content_scripts": [
     {
       "matches": ["https://indian-tv.cz/*"],
-      "css": ["xxx.css"]
+      "css": ["xxx.css"],
+      "js": ["xxx.js"]
     }
   ],
 
@@ -17,20 +20,21 @@
     "scripts": ["background.js"]
   },
 
-  "browser_action": {
-    "default_icon": "indian-red.png",
+  "page_action": {
+    "default_icon": "icon/indian-red.png",
     "default_title": "Indian-tv Dark Skin"
   },
+
   "icons": { 
-    "16": "indian-red.png",
-    "48": "indian-red.png",
-    "128": "indian-red.png"
+    "16": "icon/indian-red16.png",
+    "48": "icon/indian-red48.png",
+    "128": "icon/indian-red128.png"
   },
 
   "permissions": [
-    "activeTab",
-    "tabs", 
+    "tabs",
     "https://indian-tv.cz/*",
     "webNavigation"
   ]
+
 }

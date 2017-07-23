@@ -15,6 +15,11 @@ $fg-link-hover: #ffaa00;
 body.dark {
   color: $fg-verylight;
 
+  ::-moz-selection, ::selection {
+    background-color: #ffff00;
+    color: #000;
+  }
+
   ////////////////////////////////////////
   /// Horni cast webu
   .header { 
@@ -31,6 +36,9 @@ body.dark {
  .menu {
     background-color: $bg-verydark;
     border-bottom: 1px solid lighten($bg-dark, 35%);
+    button.navbar-toggler {
+      color: $fg-verylight;
+    }
   }
  
   ////////////////////////////////////////
@@ -97,13 +105,11 @@ body.dark {
   .page-wrapper {
     background-color: $bg-dark;
   }
-  .carousel {
-    background-color: $bg-dark;
-  }
 
   ////////////////////////////////////////
   /// Panel s tremi nejzajimavejsimi prispevky
   .carousel {
+    background-color: $bg-dark;
     .captions {
       background-color: $bg-verydark;
 
@@ -111,10 +117,17 @@ body.dark {
         div {
           background-color: $bg-verydark;
         }
+        &.live {
+          background-color: $bg-verydark;
+        }
       }
       .caption.active {
         div {
           background-color: $bg-indianred;
+          &.caption-live-content {
+            color: $fg-light;
+            background-color: $bg-verydark;
+          }
         }
       }
     }
@@ -173,10 +186,19 @@ body.dark {
     .box {
       background-color: $bg-darkred;
 
+      .box-header {
+        &.box-header-solid {
+          background-color: #d72228;
+        }
+      }
       .box-reviews {
         .item {
           a {
             color: $fg-verylight;
+            span {
+              //color: $bg-verydark;
+              background-color: $bg-darkblue;
+            }
           }
         }
       }
@@ -209,8 +231,40 @@ body.dark {
     }
     .box-blue {
       background-color: $bg-darkblue;
+      .box-header {
+        &.box-header-solid {
+          background-color: #1d84c0;
+        }
+      }
     }
   }
+
+  
+  .game {
+    background-color: $bg-verydark;
+    .game-header {
+      background-color: $bg-darkred;
+      h2 {
+
+        strong {
+          color: $fg-light;
+          text-shadow: #ff0000 0px 0px 10px;
+        }
+        span {
+          color: $fg-light;
+        }
+      }
+      div {
+        p { 
+          color: $fg-verylight;
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  
 
   ////////////////////////////////////////
   /// Clanek
@@ -221,7 +275,7 @@ body.dark {
     .article-header {
       background-color: $bg-darkred;
       h2 { /// Nadpis clanku
-        
+
         strong {
           color: $fg-light;
           text-shadow: #ff0000 0px 0px 10px;
@@ -250,8 +304,20 @@ body.dark {
       }
     }
 
+    .article-body {
+      blockquote {
+        color: $fg-light;
+      }
+    }
+
   }
-  
+
+  h4 {
+    &.fancy {
+      color: $fg-verylight;
+    }
+  }
+
   .box {
     background-color: $bg-verydark;
     .box-header {
@@ -318,9 +384,17 @@ body.dark {
     }
   }
 
+  ///////////////////////////////////
+  /// Login
+  .loginContainer {
+    .modal-mycontainer, form {
+      background-color: $bg-verydark;
+    }
+  }
 
-
-
+  .modal-content {
+    background-color: $bg-dark;
+  }
 
 ////////////////////////////////////
  
@@ -339,6 +413,9 @@ body.dark {
         color: $fg-link-hover!important;
       }
     }
+    &.dark {
+      color: $fg-link-hover!important;
+    }
   } // a
 
   .paginator { /// Vyber stranky 1 az N
@@ -347,7 +424,36 @@ body.dark {
     }
   }
 
+  ul {
+    &.sidemenu {
+      li {
+        a {
+          background-color: $bg-verydark;
+          color: $fg-light;
+          &:hover {
+            color: $fg-link;
+          }
+        }
+        &.active {
+          a {
+            background-color: $bg-indianred;
+            &:hover {
+              color: $fg-light;
+            }
+          }
+        }
+        &.disabled {
+          a {
+            color: $bg-dark;
+            &:hover {
+              color: $bg-dark;
+            }
+          }
+        }
+      }
 
+    }
+  }
 
 
 } // body

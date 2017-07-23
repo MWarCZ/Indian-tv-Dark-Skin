@@ -1,35 +1,44 @@
 
+// Kompatibilita s prohlížeči
+chrome = (function () {
+  return window.msBrowser ||
+    window.browser ||
+    window.chrome;
+})();
+
 
 // status: 1=on 0=off
 if(!localStorage.status) {
   localStorage['status'] = 1;
 }
 
-
+/// Preklapi nastveny status
 function toggle() {
   localStorage['status'] = (localStorage.status == 1) ? 0 : 1;
-}
-function iconnow() {
-  chrome.browserAction.setIcon({path: (localStorage.status == 1) ? "indian-red.png" : "indian-black.png"});
-}
-function toggleClass(){
-  
+
   chrome.tabs.executeScript({
-     code: 'if ( document.URL.startsWith("https://indian-tv.cz") ) { var cl = "dark"; var x = document.body.classList; if(x.contains(cl)){ x.remove(cl); } else { x.add(cl); } } '
+     code: 'setStatus(' + localStorage.status + '); classNow();'
   });
 }
 
-chrome.browserAction.onClicked.addListener(function(tab) {
+/// Nastavi ikonu odpovidajici aktualnimu stavu.
+function iconNow(tabId) {
+  chrome.pageAction.setIcon({tabId: tabId, path: (localStorage.status == 1) ? "icon/indian-red.png" : "icon/indian-black.png"});
+}
+
+function checkForValidUrl(tabId, changeInfo, tab) {
+  if(tab.url.startsWith("https://indian-tv.cz")) {
+    chrome.pageAction.show(tabId);
+    iconNow(tabId);
+  }
+}
+
+/// Kliknutí na ikonu
+chrome.pageAction.onClicked.addListener(function(tab) {
     toggle();
-    iconnow();
-    toggleClass();
+    iconNow(tab.id);
 });
 
-chrome.webNavigation.onCommitted.addListener(function(details) {
-    if (localStorage.status == 1) {
-      chrome.tabs.executeScript(details.tabId, {
-          code: 'if ( document.URL.startsWith("https://indian-tv.cz") ) { var cl = "dark"; var x = document.body.classList; if(x.contains(cl)){ x.remove(cl); } else { x.add(cl); } }'
-      });
-    }
-}, { url: [{ hostPrefix: 'indian-tv.cz'}] } );
+chrome.tabs.onUpdated.addListener(checkForValidUrl);
+
 

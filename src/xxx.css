@@ -1,5 +1,8 @@
 body.dark {
   color: #fff; }
+  body.dark ::-moz-selection, body.dark ::selection {
+    background-color: #ffff00;
+    color: #000; }
   body.dark .header {
     background-color: #000;
     border-bottom: 1px solid #747474; }
@@ -9,6 +12,8 @@ body.dark {
   body.dark .menu {
     background-color: #000;
     border-bottom: 1px solid #747474; }
+    body.dark .menu button.navbar-toggler {
+      color: #fff; }
   body.dark .flashnews {
     color: #505050; }
   body.dark .menu ul li a {
@@ -35,12 +40,17 @@ body.dark {
     background-color: #1b1b1b; }
   body.dark .carousel {
     background-color: #1b1b1b; }
-  body.dark .carousel .captions {
-    background-color: #000; }
-    body.dark .carousel .captions .caption div {
+    body.dark .carousel .captions {
       background-color: #000; }
-    body.dark .carousel .captions .caption.active div {
-      background-color: #c72b2b; }
+      body.dark .carousel .captions .caption div {
+        background-color: #000; }
+      body.dark .carousel .captions .caption.live {
+        background-color: #000; }
+      body.dark .carousel .captions .caption.active div {
+        background-color: #c72b2b; }
+        body.dark .carousel .captions .caption.active div.caption-live-content {
+          color: #d2cece;
+          background-color: #000; }
   body.dark h2.box {
     background-color: #290101; }
     body.dark h2.box ul li a {
@@ -60,8 +70,12 @@ body.dark {
     background-color: #290101; }
   body.dark .page-right .box {
     background-color: #290101; }
+    body.dark .page-right .box .box-header.box-header-solid {
+      background-color: #d72228; }
     body.dark .page-right .box .box-reviews .item a {
       color: #fff; }
+      body.dark .page-right .box .box-reviews .item a span {
+        background-color: #000317; }
     body.dark .page-right .box .box-favoritegames .item a:not(.btn) {
       color: #d2cece; }
     body.dark .page-right .box ul.box-settingslist li a {
@@ -72,6 +86,21 @@ body.dark {
       color: #d2cece; }
   body.dark .page-right .box-blue {
     background-color: #000317; }
+    body.dark .page-right .box-blue .box-header.box-header-solid {
+      background-color: #1d84c0; }
+  body.dark .game {
+    background-color: #000; }
+    body.dark .game .game-header {
+      background-color: #290101; }
+      body.dark .game .game-header h2 strong {
+        color: #d2cece;
+        text-shadow: #ff0000 0px 0px 10px; }
+      body.dark .game .game-header h2 span {
+        color: #d2cece; }
+      body.dark .game .game-header div p {
+        color: #fff; }
+        body.dark .game .game-header div p a {
+          font-weight: 600; }
   body.dark .article {
     background-color: #000;
     color: #d2cece; }
@@ -88,6 +117,10 @@ body.dark {
           font-weight: 600; }
     body.dark .article .article-review .article-review-summary ul li {
       background-color: #1b1b1b; }
+    body.dark .article .article-body blockquote {
+      color: #d2cece; }
+  body.dark h4.fancy {
+    color: #fff; }
   body.dark .box {
     background-color: #000; }
     body.dark .box .box-header {
@@ -118,6 +151,10 @@ body.dark {
     color: #1b1b1b; }
     body.dark .profile .profile-achievements h3 {
       color: #fff; }
+  body.dark .loginContainer .modal-mycontainer, body.dark .loginContainer form {
+    background-color: #000; }
+  body.dark .modal-content {
+    background-color: #1b1b1b; }
   body.dark .text-primary {
     color: #ff2200 !important; }
   body.dark a {
@@ -126,7 +163,22 @@ body.dark {
       color: #ffaa00; }
     body.dark a:focus.text-primary, body.dark a:hover.text-primary {
       color: #ffaa00 !important; }
+    body.dark a.dark {
+      color: #ffaa00 !important; }
   body.dark .paginator a {
     color: black !important; }
+  body.dark ul.sidemenu li a {
+    background-color: #000;
+    color: #d2cece; }
+    body.dark ul.sidemenu li a:hover {
+      color: #ff2200; }
+  body.dark ul.sidemenu li.active a {
+    background-color: #c72b2b; }
+    body.dark ul.sidemenu li.active a:hover {
+      color: #d2cece; }
+  body.dark ul.sidemenu li.disabled a {
+    color: #1b1b1b; }
+    body.dark ul.sidemenu li.disabled a:hover {
+      color: #1b1b1b; }
 
 /*# sourceMappingURL=xxx.css.map */
