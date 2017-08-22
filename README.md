@@ -1,6 +1,10 @@
 
 # Indian-tv Dark Skin
 
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![Chrome](https://img.shields.io/badge/Chrome-Support-brightgreen.svg)](LICENSE.md)
+[![Firefox](https://img.shields.io/badge/Firefox-Support-brightgreen.svg)](LICENSE.md)
+
 ## Co to je?
 
 Jedná se o doplněk/rozšíření do webového prohlížeče, který upravuje web [Indian](https://indian-tv.cz). Předělává povědšině barvy webu, ale v některých případech prozatimě upravuje i jiné vlastnosti webu (např. zobrazení streamu). 
@@ -22,4 +26,9 @@ Doplněk je dělán univerzálně (WebExtensions) a je kompatibilní s velkou č
 ## Budoucnost doplňku/rozšíření
 Budoucnost není růžová. V okamžiku, kdy doplněk/rozšíření nebude potřeba, tak bude ukončeno jeho aktualizování a následně bude taktéž ukončena jeho distribuce.
 
+## Licence
+- [MIT License](LICENSE.md)
+
+## Autor
+- MWarCZ
 
