@@ -23,6 +23,7 @@ build: $(OBJ_CSS) $(OBJ_JS)
 	mkdir -p $(BUILD_DIR);
 	$(foreach var, $^, cp $(var) $(BUILD_DIR);	)
 	cp -R icon/ $(BUILD_DIR);
+	cd $(BUILD_DIR)icon/ && rm -f *.xcf;
 	@printf "\n##########################################\n\n"
 	cd $(BUILD_DIR) && \
 	zip -r ../Indian-tv\ Dark\ Skin.zip . && \
@@ -30,5 +31,7 @@ build: $(OBJ_CSS) $(OBJ_JS)
 	@printf "\n##########################################\n\n"
 
 clean:
-	rm *.map
-	#rm -R $(BUILD_DIR)
+	rm -f *.map
+	rm -f *.css
+	rm -fR .sass-cache/
+	rm -fR $(BUILD_DIR)

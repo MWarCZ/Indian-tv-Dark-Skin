@@ -7,6 +7,9 @@
 
 src/*.css
 
+tmp/
+temp/
+
 .sass-cache/
 build/
 
