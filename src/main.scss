@@ -33,14 +33,14 @@ body.dark {
       }
     }
   }
- .menu {
+  .menu {
     background-color: $bg-verydark;
     border-bottom: 1px solid lighten($bg-dark, 35%);
     button.navbar-toggler {
       color: $fg-verylight;
     }
   }
- 
+
   ////////////////////////////////////////
   /// Horni pruh s novinkama
   .flashnews {
@@ -104,6 +104,13 @@ body.dark {
   /// Pozadi webu
   .page-wrapper {
     background-color: $bg-dark;
+  }
+  
+  .bar {
+    background-color: $bg-darkred;
+    strong {
+      color: $fg-light;
+    }
   }
 
   ////////////////////////////////////////
@@ -173,8 +180,18 @@ body.dark {
         }
       }
     }
+    &.contentbox-community {
+      .contentbox-cover {
+        background-color: $bg-verydark;
+      }
+    }
 
-
+  }
+  .contentbox-postaddon {
+    &.contentbox-merged {
+      background-color: $bg-darkblue;
+      color: $fg-light;
+    }
   }
 
   /////////////////////////////////
@@ -198,6 +215,13 @@ body.dark {
             span {
               //color: $bg-verydark;
               background-color: $bg-darkblue;
+            }
+          }
+          &.item-big {
+            a {
+              span {
+                background-color: $bg-indianred;
+              }
             }
           }
         }
@@ -326,6 +350,11 @@ body.dark {
         color: $fg-light;
       }
     }
+    p {
+      &.box-smalltext {
+        color: $fg-light;
+      }
+    }
   }
 
   /// U komentaru > Doba pred jak dlohou dobou byl napsan prispevek.
@@ -382,6 +411,19 @@ body.dark {
         color: $fg-verylight;
       }
     }
+    .profile-intro {
+      .profile-avatar {
+        background-color: $bg-verydark;
+      }
+    }
+  }
+
+  .settings-userbox {
+    .settings-userbox-avatar {
+      &>div {
+        background-color: $bg-darkred;
+      }
+    }
   }
 
   ///////////////////////////////////
@@ -397,25 +439,25 @@ body.dark {
   }
 
 ////////////////////////////////////
- 
-  .text-primary {
-     color: $fg-link!important;
+
+.text-primary {
+ color: $fg-link!important;
+}
+a {
+  color: $fg-link;
+
+  &:hover {
+    color: $fg-link-hover;
   }
-  a {
-    color: $fg-link;
 
-    &:hover {
-      color: $fg-link-hover;
-    }
-
-    &:focus, &:hover {
-      &.text-primary {
-        color: $fg-link-hover!important;
-      }
-    }
-    &.dark {
+  &:focus, &:hover {
+    &.text-primary {
       color: $fg-link-hover!important;
     }
+  }
+  &.dark {
+    color: $fg-link-hover!important;
+  }
   } // a
 
   .paginator { /// Vyber stranky 1 az N
@@ -455,6 +497,180 @@ body.dark {
     }
   }
 
+  /// Kalendar
+  .box-calendar {
+    table {
+      thead {
+        th {
+          background-color: $bg-darkblue;
+        }
+      }
+      tbody {
+        td { 
+          a { 
+            &.calendar-day {
+              color: $fg-verylight;
+              position: relative;
+              display: inline-block;
+              width: 100%;
+              &:before {
+                content: "☻";
+                display: block;
+                position: absolute;
+                right: 0px;
+                left: 0px;
+                top: 0px;
+                text-align: center;
+                color: #333333;
+                font-size: 4em;
+              }
+            }
+          }
+          div {
+            a {
+              i {
+                &.fa {
+                  color: $fg-light;
+                }
+              }
+            }
+          }
+          &.calendar-othermonth {
+            background-color: lighten($bg-verydark, 7%);
+            a {
+              &.calendar-day {
+                color: $fg-light;
+                &:before {
+                  content: "";
+                }
+              }
+            }
+          }
+          &.calendar-today {
+            a {
+              &.calendar-day {
+                &:before {
+                  color: #fd6d71;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  div {
+    &.box {
+      .box-header {
+        ul {
+          li {
+            a {
+              color: $fg-light;
+            }
+            &.active {
+              a {
+                color: $bg-indianred;
+                font-weight: 800;
+              }
+            }
+            &:nth-child(1) {
+              a {
+                &::before {
+                  content: "◄ ";
+                }
+              }
+            }
+            &:nth-child(3) {
+              a {
+                &::after {
+                  content: " ►";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #snippet--player {
+    position: fixed;
+    left: 0;
+    width: 70vw;
+    z-index: 100;
+    bottom: 0;
+    top: 76px;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+    .article-cover.article-cover-big {
+      width: 100%;
+    }
+  }
+  #snippet--player + .article-body {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    background-color: black;
+    overflow: hidden;
+    transition: 1s max-height, 1s left, 1s width;
+    &:not(:hover) {
+
+      max-height: 75px;
+      left: 58vw;
+      width: 12vw;
+      color: black;
+    }
+    &:hover {
+      max-height: 100vh;
+    }
+
+  }
+
+  #chat { 
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 70vw;
+    right: 0;
+    width:auto;
+    height: 100vh;
+  }
+  .sidebox {
+    .sidebox-segments {
+      .sidebox-segment-livestream-chat {
+        height: calc(100vh - 140px);
+        ul {
+          li:nth-child(2n) {
+            background-color: lighten($bg-darkred,5);
+          }
+        }
+      }
+    }
+  }
+  .article-livestream {
+    .article-header {
+      h2 {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        background: $bg-verydark;
+        margin-left: 196px;
+        height: 75px;
+        width: 37vw;
+      }
+    }
+  }
+  #snippet--sendmsg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
 } // body
 

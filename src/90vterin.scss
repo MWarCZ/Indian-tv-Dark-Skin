@@ -1,0 +1,63 @@
+
+$cl-theme: #a21aff;
+$cl-theme-inv: #fff;
+
+body.dark {
+  .article {
+    .article-header {
+      border-top-color: $cl-theme;
+      h2 {
+        color: $cl-theme;
+      }
+    }
+  }
+
+  .page {
+    &.page-switched {
+      &.page-show {
+        h2 {
+          &.box-header {
+            color: $cl-theme;
+          }
+        }
+        .box {
+          border-top-color: $cl-theme;
+        }
+        .btn-primary {
+          background-color: $cl-theme;
+          color: $cl-theme-inv;
+          &:hover {
+            background-color: darken($cl-theme, 15%);
+          }
+        }
+      }
+    }
+  }
+
+  /// leva cast webu s logem poradu
+  .box {
+    border-top-color: $cl-theme;
+    a {
+      &:not(.btn) {
+        color: $cl-theme;
+        &:hover {
+          color: lighten($cl-theme, 25%);
+        }
+      }
+    }
+    &.box-show-side {
+      border-left-color: $cl-theme;
+      .box-show-header {
+        background-color: $cl-theme;
+        a {
+          color: $cl-theme-inv;
+          img {
+            border-radius: 0 0 0 50px;
+          }
+        }
+      }
+    }
+  }
+} // body
+
+

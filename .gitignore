@@ -5,6 +5,8 @@
 *.swp
 *.map
 
+src/*.css
+
 .sass-cache/
 build/
 

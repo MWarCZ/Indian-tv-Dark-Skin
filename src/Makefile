@@ -1,18 +1,27 @@
 
 BUILD_DIR=../build/Indian-tv\ Dark\ Skin/
 
-all: xxx.css
+OBJ_CSS=main 90vterin top5 liveplay
+OBJ_CSS:=$(addsuffix .css, $(OBJ_CSS))
+OBJ_JS=manifest.json background.js xxx.js
+
+define NEWLINE
+
+
+endef
+
+all: $(OBJ_CSS)
+
+echo:
+	printf "$(OBJ_CSS)\n"
 
 %.css: %.scss
 	sass $^ $@
 
-build: xxx.css xxx.js background.js manifest.json
+build: $(OBJ_CSS) $(OBJ_JS)
 	@printf "\n##########################################\n\n"
 	mkdir -p $(BUILD_DIR);
-	cp xxx.css $(BUILD_DIR);
-	cp xxx.js $(BUILD_DIR);
-	cp background.js $(BUILD_DIR);
-	cp manifest.json $(BUILD_DIR);
+	$(foreach var, $^, cp $(var) $(BUILD_DIR);	)
 	cp -R icon/ $(BUILD_DIR);
 	@printf "\n##########################################\n\n"
 	cd $(BUILD_DIR) && \
@@ -20,3 +29,6 @@ build: xxx.css xxx.js background.js manifest.json
 	cp ../Indian-tv\ Dark\ Skin.zip ../Indian-tv\ Dark\ Skin.xpi;
 	@printf "\n##########################################\n\n"
 
+clean:
+	rm *.map
+	#rm -R $(BUILD_DIR)
