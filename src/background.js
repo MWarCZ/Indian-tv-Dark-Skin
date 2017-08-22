@@ -1,3 +1,5 @@
+// Project: Indian-tv Dark Skin
+// Filename: src/background.js
 
 // Kompatibilita s prohlížeči
 chrome = (function () {
@@ -42,3 +44,4 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
 
 
+// EndOfFile: src/background.js

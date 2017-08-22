@@ -1,4 +1,5 @@
-
+// Project: Indian-tv Dark Skin
+// Filename: src/xxx.js
 
 function setStatus(value=1) {
   localStorage['status'] = value;
@@ -20,3 +21,5 @@ if(!localStorage.status) {
 }
 
 classNow();
+
+// EndOfFile: src/xxx.js
