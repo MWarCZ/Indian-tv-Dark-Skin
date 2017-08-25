@@ -596,6 +596,8 @@ a {
     }
   }
 
+// stream
+
   #snippet--player {
     position: fixed;
     left: 0;
@@ -672,6 +674,14 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
+  }
+  .article-cover.article-cover-big.has-countdown:before {
+    position:fixed;
+    top: 75px;
+  }
+  .article-livestream .video-js{
+    width: 100% !important;
+    height: 100% !important;
   }
 
 } // body
