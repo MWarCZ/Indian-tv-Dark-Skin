@@ -87,6 +87,26 @@ body.dark {
         }
       }
     }
+
+    .droppanel {
+      .droppanel-buttons {
+        a {
+          color: $bg-dark;
+          &:hover {
+            color: $fg-link-hover;
+            background-color: darken(#fff, 19%);
+          }
+        }
+      }
+      &.open {
+        .droppanel-panel {
+          background-color: $bg-verydark; 
+          a:hover {
+            background-color: $bg-verydark;
+          } 
+        }
+      }
+    }
   }
   .dropdown-menu {
     background-color: $bg-dark;
@@ -183,6 +203,12 @@ body.dark {
       }
     }
     &.contentbox-community {
+      .contentbox-cover {
+        background-color: $bg-verydark;
+      }
+    }
+    // .contentbox.contentbox-mini .contentbox-cover
+    &.contentbox-mini {
       .contentbox-cover {
         background-color: $bg-verydark;
       }
@@ -497,6 +523,11 @@ a {
       }
 
     }
+  }
+
+  /// Souteze - vybirani bonusu
+  #snippet--bonuses ul li {
+    color: black;
   }
 
   /// Kalendar
