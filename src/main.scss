@@ -530,6 +530,13 @@ a {
     color: black;
   }
 
+  .table {
+    color: $fg-light;
+  }
+  .table-hover tbody tr:hover {
+    color: $fg-verylight;
+  }
+
   /// Kalendar
   .box-calendar {
     table {
@@ -636,6 +643,7 @@ a {
     z-index: 100;
     bottom: 0;
     top: 76px;
+    z-index: 6666;
     iframe {
       height: 100%;
       width: 100%;
@@ -653,6 +661,7 @@ a {
     background-color: black;
     overflow: hidden;
     transition: 1s max-height, 1s left, 1s width;
+    z-index: 6666;
     &:not(:hover) {
 
       max-height: 75px;
@@ -674,11 +683,21 @@ a {
     right: 0;
     width:auto;
     height: 100vh;
+    display: flex;
+    flex-flow: column;
+    z-index: 6666;
   }
   .sidebox {
     .sidebox-segments {
+      display: flex;
+      flex-flow: column;
+      height: unset;
+      flex: 1;
+
       .sidebox-segment-livestream-chat {
-        height: calc(100vh - 140px);
+        /* height: calc(100vh - 140px); */
+        height: unset;
+        flex: 1;
         ul {
           li:nth-child(2n) {
             background-color: lighten($bg-darkred,5);
