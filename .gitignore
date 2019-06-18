@@ -5,11 +5,14 @@
 *.swp
 *.map
 
-src/*.css
-
 tmp/
 temp/
 
 .sass-cache/
+node_modules/
+
 build/
+dist/
+
+yarn.lock
 
