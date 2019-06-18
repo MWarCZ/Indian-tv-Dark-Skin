@@ -16,12 +16,13 @@ Doplněk je dělán univerzálně (WebExtensions) a je kompatibilní s velkou č
 
 ### Dostupný oficiálně pro:
 - [Chrome][chrome-store]
-- [Firefox][firefos-store]
-- [Firefox for Android][firefos-store]
+- [~~Firefox~~][firefos-store]
+- [~~Firefox for Android~~][firefos-store]
 
 ### Možnost manuálně přidat do:
 - Opera
 - Edge
+- Firefox
 
 ## Budoucnost doplňku/rozšíření
 Budoucnost není růžová. V okamžiku, kdy doplněk/rozšíření nebude potřeba, tak bude ukončeno jeho aktualizování a následně bude taktéž ukončena jeho distribuce.
@@ -31,6 +32,28 @@ Budoucnost není růžová. V okamžiku, kdy doplněk/rozšíření nebude potř
 
 ## Autor
 - [MWarCZ]
+
+## Chcete si doplněk sami upravit?
+
+### Potřebujete:
+- [Node.js](https://nodejs.org/)
+- Linux _nebo_ [WSL](https://docs.microsoft.com/cs-cz/windows/wsl/install-win10)
+
+### Důležité skrypty
+
+- Stažení závislostí
+  - `npm install` nebo `yarn`
+- Sestavení
+  - `npm run build` nebo `build`
+- Sestavení a vytvoření distribuce
+  - `npm run dist` nebo `yarn dist`
+- Smazání generovaných souborů a složek
+  - `npm run clean` nebo `yarn clean`
+- Smazání stažených závislostí
+  - `npm run clean:node` nebo `yarn clean:node`
+- Smazání generovaných souborů i stažených závislostí
+  - `npm run clean:all` nebo `yarn clean:all`
+
 
 [MWarCZ]: https://github.com/MWarCZ
 [firefos-store]: https://addons.mozilla.org/cs/firefox/addon/indian-tv_dark_skin/
