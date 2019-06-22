@@ -44,7 +44,7 @@ Budoucnost není růžová. V okamžiku, kdy doplněk/rozšíření nebude potř
 - Stažení závislostí
   - `npm install` nebo `yarn`
 - Sestavení
-  - `npm run build` nebo `build`
+  - `npm run build` nebo `yarn build`
 - Sestavení a vytvoření distribuce
   - `npm run dist` nebo `yarn dist`
 - Smazání generovaných souborů a složek
