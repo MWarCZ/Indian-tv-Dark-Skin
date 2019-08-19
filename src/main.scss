@@ -691,7 +691,7 @@ a {
     .sidebox-segments {
       display: flex;
       flex-flow: column;
-      height: unset;
+      height: 0;
       flex: 1;
 
       .sidebox-segment-livestream-chat {
