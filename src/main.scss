@@ -15,617 +15,214 @@ $fg-link: #ff2200;
 $fg-link-hover: #ffaa00;
 
 body.dark {
-  color: $fg-verylight;
+  // color: $fg-verylight;
 
-  ::-moz-selection, ::selection {
-    background-color: #ffff00;
-    color: #000;
-  }
-
-  ////////////////////////////////////////
-  /// Horni cast webu
-  .header { 
-    background-color: $bg-verydark;
-    border-bottom: 1px solid lighten($bg-dark, 35%);
-    
-    h1 {
-      a {
-        overflow: hidden;
-        border-radius: 0 0 5px 5px;
-      }
-    }
-  }
-  .menu {
-    background-color: $bg-verydark;
-    border-bottom: 1px solid lighten($bg-dark, 35%);
-    button.navbar-toggler {
-      color: $fg-verylight;
-    }
-  }
-
-  ////////////////////////////////////////
-  /// Horni pruh s novinkama
-  .flashnews {
-    color: #505050;
-  }
-
-  ////////////////////////////////////////
+  // ::-moz-selection, ::selection {
+  //   background-color: #ffff00;
+  //   color: #000;
+  // }
   /// Menu
-
-  .menu {
-    ul {
-      li {
+  header {
+    background-color: $bg-dark;
+    .container {
+      h1 {
         a {
-          color: $fg-light;
-          text-shadow: #990000 1px 1px 10px;
-          &:hover {
-            color: $fg-link;
-          }
-        }
-        &.active {
-          a {
-            color: $fg-link;
-            
+          // Logo Indian
+          svg {
+            background: white;
+            padding: 2px;
           }
         }
       }
-    }
-
-    .menu-user {
-      li.user {
-        a.dropdown-toggle {
-          strong {
-            font-weight: 600;
-            color: $fg-light;
-
-          }
-          &:hover {
-            strong {
-              color: $fg-link;
+      .header__overlayable {
+        .header__menu {
+          li {
+            a {
+              color:  $fg-light;
+            }
+            &.active {
+              &>a {
+                color: $fg-link;
+              }
+            }
+            &>ul {
+              background-color:  $bg-dark;
+            }
+            &:hover {
+              &>a {
+                color: $fg-link;
+              }
             }
           }
         }
       }
     }
-
-    .droppanel {
-      .droppanel-buttons {
-        a {
-          color: $bg-dark;
-          &:hover {
-            color: $fg-link-hover;
-            background-color: darken(#fff, 19%);
+  }
+  #mobileMenu {
+    background-color: $bg-dark;
+    .header__menu {
+      &>li {
+        &>a {
+          color: $fg-light;
+        }
+        &.active {
+          &>a {
+            color: $fg-link;
+          }
+        }
+        &:hover {
+          &>a {
+            color: $fg-link;
           }
         }
       }
-      &.open {
-        .droppanel-panel {
-          background-color: $bg-verydark; 
-          a:hover {
-            background-color: $bg-verydark;
-          } 
-        }
-      }
-    }
-  }
-  .dropdown-menu {
-    background-color: $bg-dark;
-    color: $fg-light;
-    border-radius: 4px 4px 8px 8px;
-    overflow: hidden;
-
-    a {
-      &:hover { 
-        background-color: lighten($bg-dark, 19%);
-        color: $fg-light!important;
-      }
     }
   }
 
-  ////////////////////////////////////////
-  /// Pozadi webu
+  /// Hlavni obsah 
   .page-wrapper {
     background-color: $bg-dark;
-  }
-  
-  .bar {
-    background-color: $bg-darkred;
-    strong {
-      color: $fg-light;
-    }
-  }
-
-  ////////////////////////////////////////
-  /// Panel s tremi nejzajimavejsimi prispevky
-  .carousel {
-    background-color: $bg-dark;
-    .captions {
-      background-color: $bg-verydark;
-
-      .caption {
-        div {
+    .container {
+      .page {
+        .box {
           background-color: $bg-verydark;
-        }
-        &.live {
-          background-color: $bg-verydark;
-        }
-      }
-      .caption.active {
-        div {
-          background-color: $bg-indianred;
-          &.caption-live-content {
-            color: $fg-light;
-            background-color: $bg-verydark;
-          }
-        }
-      }
-    }
-  }
-
-  ////////////////////////////////////////
-  /// Nadpis pred clanky
-  
-  h2.box {
-    background-color: $bg-darkred;
-    ul {
-      li {
-        a {
           color: $fg-light;
-        }
-      }
-    }
-  }
-  
-  //////////////////////////////////
-  /// Nahled clanku
-  .contentbox {
-    background-color: $bg-verydark;
-    color: $fg-light;
-
-    .contentbox-wrapper {
-      .contentbox-header {
-        a { /// Nadpis clanku
-          &:not(.btn) {
-            color: $fg-light
-          }
-        }
-        small { /// Kdy bylo publikovano
-          color: $fg-light;
-        }
-        h3 {
-          a:not(.btn) {
-            color: $fg-verylight;
-          }
-          a.user {
-            color: $fg-link-hover;
-          }
-        }
-      }
-    }
-    &.contentbox-community {
-      .contentbox-cover {
-        background-color: $bg-verydark;
-      }
-    }
-    // .contentbox.contentbox-mini .contentbox-cover
-    &.contentbox-mini {
-      .contentbox-cover {
-        background-color: $bg-verydark;
-      }
-    }
-
-  }
-  .contentbox-postaddon {
-    &.contentbox-merged {
-      background-color: $bg-darkblue;
-      color: $fg-light;
-    }
-  }
-
-  /////////////////////////////////
-  /// Bocni pravy panel
-  .page-right {
-    .sidebox {
-      background-color: $bg-darkred;
-    }
-    .box {
-      background-color: $bg-darkred;
-
-      .box-header {
-        &.box-header-solid {
-          background-color: #d72228;
-        }
-      }
-      .box-reviews {
-        .item {
-          a {
-            color: $fg-verylight;
-            span {
-              //color: $bg-verydark;
-              background-color: $bg-darkblue;
-            }
-          }
-          &.item-big {
-            a {
-              span {
-                background-color: $bg-indianred;
-              }
-            }
-          }
-        }
-      }
-      .box-favoritegames {
-        .item {
-          a:not(.btn){
+          p {
             color: $fg-light;
           }
-        }
-      }
-      ul {
-        &.box-settingslist {
-          li {
-            a{
-              color: $fg-light;
-              &:hover {
-                color: $fg-verylight;
-              }
-            }
-          }
-        }
-      }
-      .box-gameinfo {
-        h3 {
-          a {
-            color: $fg-light;
-          }
-        }
-      }
-    }
-    .box-blue {
-      background-color: $bg-darkblue;
-      .box-header {
-        &.box-header-solid {
-          background-color: #1d84c0;
-        }
-      }
-    }
-  }
-
-  
-  .game {
-    background-color: $bg-verydark;
-    .game-header {
-      background-color: $bg-darkred;
-      h2 {
-
-        strong {
-          color: $fg-light;
-          text-shadow: #ff0000 0px 0px 10px;
-        }
-        span {
-          color: $fg-light;
-        }
-      }
-      div {
-        p { 
-          color: $fg-verylight;
-          a {
-            font-weight: 600;
-          }
-        }
-      }
-    }
-  }
-  
-
-  ////////////////////////////////////////
-  /// Clanek
-  .article {
-    background-color: $bg-verydark;
-    color: $fg-light;
-
-    .article-header {
-      background-color: $bg-darkred;
-      h2 { /// Nadpis clanku
-
-        strong {
-          color: $fg-light;
-          text-shadow: #ff0000 0px 0px 10px;
-        }
-        span {
-          color: $fg-light;
-        }
-      }
-      div {
-        p { /// Autor a datum publikovani
-          color: $fg-verylight;
-          a {
-            font-weight: 600;
-          }
-        }
-      }
-    }
-
-    .article-review { // recneze
-      .article-review-summary { 
-        ul {
-          li { // Plusy a minusy hry
-            background-color: $bg-dark;
-          }
-        }
-      }
-    }
-
-    .article-body {
-      blockquote {
-        color: $fg-light;
-      }
-    }
-
-  }
-
-  h4 {
-    &.fancy {
-      color: $fg-verylight;
-    }
-  }
-
-  .box {
-    background-color: $bg-verydark;
-    .box-header {
-      background-color: $bg-darkred;
-      small { 
-        color: $fg-light;
-      }
-    }
-    p {
-      &.box-smalltext {
-        color: $fg-light;
-      }
-    }
-  }
-
-  /// U komentaru > Doba pred jak dlohou dobou byl napsan prispevek.
-  .box.comments ul.article-comments li .comment-content h4 a:last-of-type {
-    color: darken($fg-light, 20%);
-  }
-
-  .filterbox {
-    background-color: $bg-verydark;
-    li {
-      color: $fg-light;
-      a {
-        color: $fg-light;
-      }
-      &.active {
-        a {
-          color: $fg-link;
-        }
-      }
-    }
-  }
-
-  .extras-redakce-profile {
-    .profile-content {
-      h4 {
-        small{
-          color: $fg-verylight;
-        }
-      }
-    }
-  }
-  .profile-contacts {
-    color: $bg-dark;
-  }
-  .profile {
-    .profile-intro {
-      .profile-about {
-        h3 {
-          color: $fg-verylight;
-          small {
-            color: $fg-light;
-          }
-        }
-        .profile-level {
           strong {
-            color: $fg-verylight;
+            color: $fg-light;
           }
         }
-      }
-    }
-    .profile-achievements {
-      color: $bg-dark;
-      h3 {
-        color: $fg-verylight;
-      }
-    }
-    .profile-intro {
-      .profile-avatar {
-        background-color: $bg-verydark;
-      }
-    }
-  }
-
-  .settings-userbox {
-    .settings-userbox-avatar {
-      &>div {
-        background-color: $bg-darkred;
-      }
-    }
-  }
-
-  ///////////////////////////////////
-  /// Login
-  .loginContainer {
-    .modal-mycontainer, form {
-      background-color: $bg-verydark;
-    }
-  }
-
-  .modal-content {
-    background-color: $bg-dark;
-  }
-
-////////////////////////////////////
-
-.text-primary {
- color: $fg-link!important;
-}
-a {
-  color: $fg-link;
-
-  &:hover {
-    color: $fg-link-hover;
-  }
-
-  &:focus, &:hover {
-    &.text-primary {
-      color: $fg-link-hover!important;
-    }
-  }
-  &.dark {
-    color: $fg-link-hover!important;
-  }
-  } // a
-
-  .paginator { /// Vyber stranky 1 az N
-    a {
-      color: black!important;
-    }
-  }
-
-  ul {
-    &.sidemenu {
-      li {
-        a {
-          background-color: $bg-verydark;
-          color: $fg-light;
-          &:hover {
-            color: $fg-link;
-          }
-        }
-        &.active {
-          a {
-            background-color: $bg-indianred;
-            &:hover {
+        .page-left {
+          /// Clanky
+          .article {
+            background-color: $bg-verydark;
+            .article-body {
               color: $fg-light;
-            }
-          }
-        }
-        &.disabled {
-          a {
-            color: $bg-dark;
-            &:hover {
-              color: $bg-dark;
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  /// Souteze - vybirani bonusu
-  #snippet--bonuses ul li {
-    color: black;
-  }
-
-  .table {
-    color: $fg-light;
-  }
-  .table-hover tbody tr:hover {
-    color: $fg-verylight;
-  }
-
-  /// Kalendar
-  .box-calendar {
-    table {
-      thead {
-        th {
-          background-color: $bg-darkblue;
-        }
-      }
-      tbody {
-        td { 
-          a { 
-            &.calendar-day {
-              color: $fg-verylight;
-              position: relative;
-              display: inline-block;
-              width: 100%;
-              &:before {
-                content: "☻";
-                display: block;
-                position: absolute;
-                right: 0px;
-                left: 0px;
-                top: 0px;
-                text-align: center;
-                color: #333333;
-                font-size: 4em;
+              background-color: $bg-verydark;
+              strong {
+                color: $fg-light;
               }
             }
-          }
-          div {
-            a {
-              i {
-                &.fa {
+            .article__author {
+              strong {
+                color: $bg-dark;
+              }
+            }
+            .article__header, .article__footer, .article__review_verdict {
+              strong {
+                color: $fg-light;
+              }
+              p {
+                color: $fg-light;
+                a {
                   color: $fg-light;
                 }
               }
             }
+            .article__review {
+              background-color: $fg-verylight;
+            }
           }
-          &.calendar-othermonth {
-            background-color: lighten($bg-verydark, 7%);
-            a {
-              &.calendar-day {
+          /// Diskuze / Komentare
+          .box.comments {
+            color: $fg-light;
+            background-color: $bg-verydark;
+            .box-header {
+              small {
                 color: $fg-light;
-                &:before {
-                  content: "";
-                }
               }
             }
-          }
-          &.calendar-today {
-            a {
-              &.calendar-day {
-                &:before {
-                  color: #fd6d71;
+            .comment-content {
+              h4 {
+                //&>a {}
+                a:last-of-type {
+                  color: $fg-verylight;
                 }
               }
             }
           }
         }
+        .page-right {
+          .panel {
+            background-color: $bg-verydark;
+            .panel__cover_menu {
+              a:not(:hover) {
+                color: $fg-light;
+                strong {
+                  color: $fg-light;
+                }
+              }
+            }
+            .panel__article {
+              strong {
+                color: $fg-light;
+              }
+              &>div {
+                color: $fg-light;
+              }
+            }
+            .panel__item {
+              a {
+                .panel_reviews__name {
+                  color: $fg-light;
+                }
+                &:hover {
+                  .panel_reviews__name {
+                    color: $fg-link;
+                  }
+                }
+              }
+            }
+            .panel__activity {
+              a.dark {
+                color: $fg-light!important;
+              }
+              &>div {
+                color: $fg-light;
+              }
+            }
+          }
+          .panel--show-side {
+              background-color: $fg-verylight;
+            }
+        }
       }
-    }
-  }
-  
-  div {
-    &.box {
-      .box-header {
+      /// Boxy(nahledy) s clanky, recenze, porady
+      .articlebox, .episodebox {
+        background-color: $bg-verydark;
+        color: $fg-light;
+        a:not(:hover) {
+          color: $fg-light;
+        }
+        .articlebox__content {
+          background-color: $bg-verydark;
+          color: $fg-light;
+          .articlebox__footer__released {
+            color: $fg-light;
+          }
+          a {
+            strong {
+              color: $fg-verylight;
+            }
+          }
+        }
+      }
+      /// Souteze - ukoly, atd.
+      #snippet--bonuses {
         ul {
-          li {
-            a {
-              color: $fg-light;
-            }
-            &.active {
-              a {
-                color: $bg-indianred;
-                font-weight: 800;
-              }
-            }
-            &:nth-child(1) {
-              a {
-                &::before {
-                  content: "◄ ";
-                }
-              }
-            }
-            &:nth-child(3) {
-              a {
-                &::after {
-                  content: " ►";
-                }
+          color: $bg-verydark;
+        }
+      }
+      /// Profil uzivatele
+      .profile {
+        .profile-intro {
+          .profile-about { 
+            h3 {
+              color: $fg-verylight;
+              small {
+                color: $fg-light;
               }
             }
           }
@@ -633,107 +230,8 @@ a {
       }
     }
   }
-
-// stream
-
-  #snippet--player {
-    position: fixed;
-    left: 0;
-    width: 70vw;
-    z-index: 100;
-    bottom: 0;
-    top: 76px;
-    z-index: 6666;
-    iframe {
-      height: 100%;
-      width: 100%;
-    }
-    .article-cover.article-cover-big {
-      width: 100%;
-    }
-  }
-  #snippet--player + .article-body {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 70vw;
-    background-color: black;
-    overflow: hidden;
-    transition: 1s max-height, 1s left, 1s width;
-    z-index: 6666;
-    &:not(:hover) {
-
-      max-height: 75px;
-      left: 58vw;
-      width: 12vw;
-      color: black;
-    }
-    &:hover {
-      max-height: 100vh;
-    }
-
-  }
-
-  #chat { 
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 70vw;
-    right: 0;
-    width:auto;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    z-index: 6666;
-  }
-  .sidebox {
-    .sidebox-segments {
-      display: flex;
-      flex-flow: column;
-      height: 0;
-      flex: 1;
-
-      .sidebox-segment-livestream-chat {
-        /* height: calc(100vh - 140px); */
-        height: unset;
-        flex: 1;
-        ul {
-          li:nth-child(2n) {
-            background-color: lighten($bg-darkred,5);
-          }
-        }
-      }
-    }
-  }
-  .article-livestream {
-    .article-header {
-      h2 {
-        z-index: 100;
-        position: fixed;
-        top: 0;
-        background: $bg-verydark;
-        margin-left: 196px;
-        height: 75px;
-        width: 37vw;
-      }
-    }
-  }
-  #snippet--sendmsg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .article-cover.article-cover-big.has-countdown:before {
-    position:fixed;
-    top: 75px;
-  }
-  .article-livestream .video-js{
-    width: 100% !important;
-    height: 100% !important;
-  }
-
+//.box.comments ul.article-comments li .comment-content h4 a:last-of-type, 
+//.comments.teamprofile ul.article-comments li .comment-content h4 a:last-of-type
 } // body
 
 // EndOfFile: src/main.scss
