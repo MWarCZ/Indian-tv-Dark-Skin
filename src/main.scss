@@ -42,6 +42,19 @@ body.dark {
                 fill: $cl-verylight!important;
               }
           }
+          // Bile pozadi za raketnou 
+          &:before {
+            content: ' ';
+            color: white;
+            background: white;
+            display: block;
+            width: 25px;
+            height: 27px;
+            position: absolute;
+            top: 20px;
+            left: 5px;
+            z-index: -10;
+          }
         }
       }
       .header__overlayable {
@@ -75,6 +88,14 @@ body.dark {
         .droppanel-buttons {
           a {
             color: $cl-dark;
+          }
+        }
+      }
+      .header__social {
+        ul {
+          background-color: $cl-dark;
+          a:not(:hover) {
+            color: $cl-light;
           }
         }
       }
