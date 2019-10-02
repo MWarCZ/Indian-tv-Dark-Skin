@@ -42,6 +42,19 @@ body.dark {
                 fill: $cl-verylight!important;
               }
           }
+          // Bile pozadi za raketnou 
+          &:before {
+            content: ' ';
+            color: white;
+            background: white;
+            display: block;
+            width: 25px;
+            height: 27px;
+            position: absolute;
+            top: 20px;
+            left: 5px;
+            z-index: -10;
+          }
         }
       }
       .header__overlayable {
@@ -78,6 +91,14 @@ body.dark {
           }
         }
       }
+      .header__social {
+        ul {
+          background-color: $cl-dark;
+          a:not(:hover) {
+            color: $cl-light;
+          }
+        }
+      }
     }
   }
   #mobileMenu {
@@ -107,7 +128,7 @@ body.dark {
       .box {
         background-color: $cl-verydark;
         color: $cl-light;
-        p, strong, small {
+        p, strong, small, h4.fancy {
           color: $cl-light;
         }
       }
@@ -145,11 +166,25 @@ body.dark {
             }
           }
           .article__header, .article__footer, .article__review_verdict {
-            a {
+            a:not(.btn) {
+              color: $cl-light;
+            }
+            p {
               color: $cl-light;
             }
           }
           .article__review {
+            color: $cl-light;
+            .article_review__header, .article_review__summary {
+              color: $cl-dark;
+            }
+            .article_review__footer {
+              img {
+                filter: invert(1) hue-rotate(180deg) saturate(3);
+              }
+            }
+          }
+          .article__authors {
             color: $cl-dark;
           }
         }
@@ -163,6 +198,14 @@ body.dark {
             }
           }
         }
+        /// Hracske recenze /// TODO > design nesedi ke zbytku webu asi se jeste zmeni.
+        .usergamereview {
+          color: $cl-light;
+        }
+        .usergamereview-disclaimer {
+          color: $cl-light;
+        }
+
       }
       /// Bocni panel webu - a jeho obsah
       .page-right {
@@ -208,7 +251,6 @@ body.dark {
         }
       }
     }
-    /// TODO 
 
     /// Boxy(nahledy) s clanky, recenze, porady
     .articlebox, .episodebox {
@@ -216,6 +258,14 @@ body.dark {
       color: $cl-light;
       a:not(:hover) {
         color: $cl-light;
+        &.btn {
+          color: $cl-dark;
+        }
+      }
+      .articlebox__content {
+        .articlebox__review_summary {
+          color: $cl-dark;
+        }
       }
     }
     /// Boxy s horizontalnim razenim 
