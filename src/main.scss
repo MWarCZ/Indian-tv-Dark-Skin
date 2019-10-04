@@ -5,7 +5,7 @@ $cl-indianred: #d72228;
 
 $cl-verydark: #000;
 $cl-dark: #1b1b1b;
-$cl-darkred: #290101;
+$cl-darkred: #6e0000;
 $cl-darkblue: #000317;
 
 $cl-verylight: #fff;
@@ -212,6 +212,12 @@ body.dark {
           a.calendar-day {
             color: $cl-verylight;
           }
+          .box-calendar {
+            th {
+              background-color: $cl-dark;
+              color: $cl-verylight;
+            }
+          }
         }
       }
       /// Bocni panel webu - a jeho obsah
@@ -272,6 +278,15 @@ body.dark {
       .articlebox__content {
         .articlebox__review_summary {
           color: $cl-dark;
+        }
+        .articlebox__footer__released {
+          color: $cl-light;
+        }
+        
+        .articlebox__score {
+          a:not(:hover) { 
+            color: $cl-darkred;
+          }
         }
       }
     }
