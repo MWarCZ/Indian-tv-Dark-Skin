@@ -122,8 +122,8 @@ body.dark {
     }
   }
 
-  /// Hlavni obsah 
-  .container {
+  /// Hlavni obsah (+ obsah Modal dialogu)
+  .container, .modal-dialog {
     .page {
       .box {
         background-color: $cl-verydark;
@@ -205,7 +205,14 @@ body.dark {
         .usergamereview-disclaimer {
           color: $cl-light;
         }
-
+        /// Kalendar
+        .panel {
+          background-color: $cl-verydark;
+          color: $cl-light;
+          a.calendar-day {
+            color: $cl-verylight;
+          }
+        }
       }
       /// Bocni panel webu - a jeho obsah
       .page-right {
@@ -295,6 +302,22 @@ body.dark {
           }
         }
       }
+    }
+  }
+  /// Modal dialog - Kalendar
+  .modal-dialog {
+    header {
+      color: $cl-verylight;
+      background-color: $cl-indianred;
+      button {
+        color: $cl-verylight;
+      }
+    }
+    .modal-body {
+      background-color: $cl-dark!important;
+    }
+    .modal-footer {
+      background-color: $cl-dark;
     }
   }
 } // body
