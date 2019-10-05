@@ -1,32 +1,43 @@
 // Project: Indian-tv Dark Skin
 // Filename: src/background.js
 
-// Kompatibilita s prohlížeči
+/**
+ * Kompatibilita mezi prohlížeči.
+ * EN: Cross-browsers compatibility.
+ */
 chrome = (function () {
   return window.msBrowser ||
     window.browser ||
     window.chrome;
 })();
 
-
-// status: 1=on 0=off
+// status dark skin: 1=on 0=off
 if(!localStorage.status) {
   localStorage['status'] = 1;
 }
 
-/// Preklapi nastveny status
+/**
+ * Preklopeni stavu pro vyber akce prideleni/odebrani tridy dark.
+ * EN: Toggle status for select action add/remove class (dark).
+ * @param {0|1} value (0=remove, 1=add, other=nothing)
+ */
 function toggle() {
+  // Extension
   localStorage['status'] = (localStorage.status == 1) ? 0 : 1;
-
+  // Web
   chrome.tabs.executeScript({
      code: 'setStatus(' + localStorage.status + '); classNow();'
   });
 }
 
-/// Nastavi ikonu odpovidajici aktualnimu stavu.
+/**
+ * Nastaveni ikony doplnku dle aktualniho stavu.
+ * EN: Set extension's icon according to current status.
+ */
 function iconNow(tabId) {
   chrome.pageAction.setIcon({tabId: tabId, path: (localStorage.status == 1) ? "icon/indian-red.png" : "icon/indian-black.png"});
 }
+
 
 function checkForValidUrl(tabId, changeInfo, tab) {
   if(tab.url.startsWith("https://indian-tv.cz")) {
@@ -42,6 +53,5 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 });
 
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
-
 
 // EndOfFile: src/background.js

@@ -2,7 +2,7 @@
   "name": "Indian-tv-Dark-Skin",
   "description": "Doplněk upravuje vzhled webu 'https://indian-tv.cz' do tmavých barev. Ikona doplňku je aktivní pouze na webu 'https://indian-tv.cz'.",
   "author": "MWarCZ",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "license": "MIT",
   "main": "src/manifest.json",
   "env": {
@@ -13,8 +13,10 @@
     }
   },
   "scripts": {
+    "prebuild": "$npm_execpath run clean",
     "build": "$npm_execpath run build:sass && $npm_execpath run copy",
     "build:sass": "sass $npm_package_env_path_src:$npm_package_env_path_build",
+    "build:sass:watch": "$npm_execpath run build:sass --watch",
     "copy": "$npm_execpath run copy:js && $npm_execpath run copy:json && $npm_execpath run copy:png && $npm_execpath run copy:jpg && $npm_execpath run copy:ico",
     "copy:js": "copyfiles --up 1 $npm_package_env_path_src/**/*.js $npm_package_env_path_build",
     "copy:json": "copyfiles --up 1 $npm_package_env_path_src/**/*.json $npm_package_env_path_build",
@@ -23,7 +25,8 @@
     "copy:ico": "copyfiles --up 1 $npm_package_env_path_src/**/*.ico $npm_package_env_path_build",
     "zip": "mkdirp $npm_package_env_path_dist && cd $npm_package_env_path_build && bestzip ../$npm_package_env_path_dist/$npm_package_name.zip *",
     "zip:firefox": "mkdirp $npm_package_env_path_dist && cd $npm_package_env_path_build && bestzip ../$npm_package_env_path_dist/$npm_package_name.xpi *",
-    "dist": "$npm_execpath run build && $npm_execpath run zip && $npm_execpath run zip:firefox",
+    "predist": "$npm_execpath run build && rimraf $npm_package_env_path_build/*.map",
+    "dist": "$npm_execpath run zip && $npm_execpath run zip:firefox",
     "clean": "rimraf $npm_package_env_path_dist && rimraf $npm_package_env_path_build",
     "clean:node": "rimraf node_modules",
     "clean:all": "$npm_execpath run clean && $npm_execpath run clean:node",
