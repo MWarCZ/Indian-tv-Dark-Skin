@@ -261,6 +261,9 @@ body.dark {
         .sidebox {
           background-color: $cl-verydark;
           color: $cl-light;
+          .sidebox-segments .sidebox-segment-list-streams ul li strong>a:not(:hover) {
+            color: $cl-light;
+          }
         }
       }
     }
