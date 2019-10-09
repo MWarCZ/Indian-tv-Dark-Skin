@@ -7,6 +7,9 @@ $cl-verydark: #000;
 $cl-dark: #1b1b1b;
 $cl-darkred: #6e0000;
 $cl-darkblue: #000317;
+$cl-verydarkblue: #000317;
+$cl-verydarkred: #1a0000;
+// $cl-verydarkred: #290101;
 
 $cl-verylight: #fff;
 $cl-light: #d2cece;
@@ -197,6 +200,9 @@ body.dark {
               }
             }
           }
+          .comment-pinned {
+            background-color: $cl-verydarkred;
+          }
         }
         /// Hracske recenze /// TODO > design nesedi ke zbytku webu asi se jeste zmeni.
         .usergamereview {
@@ -258,9 +264,18 @@ body.dark {
             color: $cl-dark;
           }
         }
+        .panel--solid-blue {
+          background-color: $cl-verydarkblue;
+        }
+        .panel--solid {
+          background-color: $cl-verydarkred;
+        }
         .sidebox {
           background-color: $cl-verydark;
           color: $cl-light;
+          .sidebox-segments .sidebox-segment-list-streams ul li strong>a:not(:hover) {
+            color: $cl-light;
+          }
         }
       }
     }
