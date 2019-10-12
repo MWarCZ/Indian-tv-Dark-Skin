@@ -25,6 +25,16 @@ body.dark {
   //   color: #000;
   // }
 
+  /// Zvyrazneni vybraneho textu
+  *::selection {
+    background-color: #d72228;
+    color: white;
+    text-shadow: black 3px 3px 3px;
+  }
+  a::selection {
+    color: yellow;
+  }
+
   /// Obal webu
   .page-wrapper {
     background-color: $cl-dark;
