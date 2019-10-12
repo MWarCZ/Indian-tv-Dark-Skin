@@ -70,6 +70,9 @@ body.dark {
               color: $cl-link;
             }
           }
+          li.active > a {
+            color: $cl-link;
+          }
           ul {
             background-color: $cl-dark;
           }
