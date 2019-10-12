@@ -16,13 +16,12 @@ Doplněk je dělán univerzálně (WebExtensions) a je kompatibilní s velkou č
 
 ### Dostupný oficiálně pro:
 - [Chrome][chrome-store]
-- [~~Firefox~~][firefos-store]
-- [~~Firefox for Android~~][firefos-store]
+- [Firefox][firefos-store]
+- [Firefox for Android][firefos-store]
 
 ### Možnost manuálně přidat do:
 - Opera
 - Edge
-- Firefox
 
 ## Budoucnost doplňku/rozšíření
 Budoucnost není růžová. V okamžiku, kdy doplněk/rozšíření nebude potřeba, tak bude ukončeno jeho aktualizování a následně bude taktéž ukončena jeho distribuce.
