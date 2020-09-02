@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/MWarCZ/Indian-tv-Dark-Skin#readme",
   "devDependencies": {
-    "bestzip": "^2.1.4",
+    "bestzip": "^2.1.7",
     "copyfiles": "^2.1.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.3",
