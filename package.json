@@ -5,32 +5,20 @@
   "version": "4.1.2",
   "license": "MIT",
   "main": "src/manifest.json",
-  "env": {
-    "path": {
-      "dist": "dist",
-      "src": "src",
-      "build": "build"
-    }
-  },
   "scripts": {
-    "prebuild": "$npm_execpath run clean",
-    "build": "$npm_execpath run build:sass && $npm_execpath run copy",
-    "build:sass": "sass $npm_package_env_path_src:$npm_package_env_path_build",
-    "build:sass:watch": "$npm_execpath run build:sass --watch",
-    "copy": "$npm_execpath run copy:js && $npm_execpath run copy:json && $npm_execpath run copy:png && $npm_execpath run copy:jpg && $npm_execpath run copy:ico",
-    "copy:js": "copyfiles --up 1 $npm_package_env_path_src/**/*.js $npm_package_env_path_build",
-    "copy:json": "copyfiles --up 1 $npm_package_env_path_src/**/*.json $npm_package_env_path_build",
-    "copy:png": "copyfiles --up 1 $npm_package_env_path_src/**/*.png $npm_package_env_path_build",
-    "copy:jpg": "copyfiles --up 1 $npm_package_env_path_src/**/*.jpg $npm_package_env_path_build",
-    "copy:ico": "copyfiles --up 1 $npm_package_env_path_src/**/*.ico $npm_package_env_path_build",
-    "zip": "mkdirp $npm_package_env_path_dist && cd $npm_package_env_path_build && bestzip ../$npm_package_env_path_dist/$npm_package_name.zip *",
-    "zip:firefox": "mkdirp $npm_package_env_path_dist && cd $npm_package_env_path_build && bestzip ../$npm_package_env_path_dist/$npm_package_name.xpi *",
-    "predist": "$npm_execpath run build && rimraf $npm_package_env_path_build/*.map",
-    "dist": "$npm_execpath run zip && $npm_execpath run zip:firefox",
-    "clean": "rimraf $npm_package_env_path_dist && rimraf $npm_package_env_path_build",
-    "clean:node": "rimraf node_modules",
-    "clean:all": "$npm_execpath run clean && $npm_execpath run clean:node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "env": "env | sort",
+    "build": "yarn copy; yarn build.sass;",
+    "build.sass": "sass ./src/:./build/",
+    "build.sass.watch": "yarn build.sass --watch",
+    "copy": "rsync -aq --del --progress ./src/ ./build/ --exclude=\"*.scss\" --exclude=\"*.sass\" --exclude=\"*.xcf\"; cd ..;",
+    "zip": "mkdir -p ./dist/; cd ./build/; zip -rq --filesync --exclude=\"*.map\" ../dist/indian-tv-dark-skin.zip ./",
+    "firefox": "cp ./dist/indian-tv-dark-skin.zip ./dist/indian-tv-dark-skin.xpi;",
+    "dist.only": "yarn zip; yarn firefox;",
+    "dist": "yarn build; yarn dist.only;",
+    "clean.build": "rm -rf ./build/",
+    "clean.dist": "rm -rf ./dist/",
+    "clean": "yarn clean.build; yarn clean.dist;",
+    ".": "echo ."
   },
   "repository": {
     "type": "git",
@@ -38,10 +26,6 @@
   },
   "homepage": "https://github.com/MWarCZ/Indian-tv-Dark-Skin#readme",
   "devDependencies": {
-    "bestzip": "^2.1.4",
-    "copyfiles": "^2.1.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.3",
-    "sass": "^1.21.0"
+    "sass": "^1.32.0"
   }
 }
