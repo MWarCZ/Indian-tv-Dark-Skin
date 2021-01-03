@@ -1,9 +1,23 @@
 
+# YARN 2
+
+## Zero-Installs
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/cache
+
+
+# Editors
+
 *.sublime-workspace
 *.sublime-project
 
 *.swp
 *.map
+
+# Others
 
 tmp/
 temp/
