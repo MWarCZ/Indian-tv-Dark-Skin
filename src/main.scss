@@ -1,368 +1,231 @@
 // Project: Indian-tv Dark Skin
-// Filename: src/main.scss
+// Filename: src/xxx.scss
 
-$cl-indianred: #d72228;
+$cl-indian-red: #d72228;
 
-$cl-verydark: #000;
-$cl-dark: #1b1b1b;
-$cl-darkred: #6e0000;
-$cl-darkblue: #000317;
-$cl-verydarkblue: #000317;
-$cl-verydarkred: #1a0000;
-// $cl-verydarkred: #290101;
+$cl-dark1: #000;
+$cl-dark2: #1b1b1b;
 
-$cl-verylight: #fff;
-$cl-light: #d2cece;
+$cl-darkred1: #6e0000;
+$cl-darkred2: #1a0000;
+// $cl-darkred2: #290101;
 
-$cl-link: #ff2200;
-$cl-link-hover: #ffaa00;
+$cl-darkblue1: #000733;
+$cl-darkblue2: #000317;
 
-body.dark {
-  // color: $cl-verylight;
+$cl-light1: #fff;
+$cl-light2: #d2cece;
 
-  // ::-moz-selection, ::selection {
-  //   background-color: #ffff00;
-  //   color: #000;
-  // }
+$cl-link1: #ff2200;
+$cl-link2: #ffaa00;
 
+:root {
+  --cl-indian-red: #{$cl-indian-red};
+
+  --cl-dark1: #{$cl-dark1};
+  --cl-dark2: #{$cl-dark2};
+
+  --cl-light1: #{$cl-light1};
+  --cl-light2: #{$cl-light2};
+
+  --cl-darkred1: #{$cl-darkred1};
+  --cl-darkred2: #{$cl-darkred2};
+  
+  --cl-darkblue1: #{$cl-darkblue1};
+  --cl-darkblue2: #{$cl-darkblue2};
+
+  --cl-link1: #{$cl-link1};
+  --cl-link2: #{$cl-link2};
+  --cl-link3: #ff0;
+}
+
+body:not(.no-theme) {
   /// Zvyrazneni vybraneho textu
   *::selection {
-    background-color: #d72228;
-    color: white;
-    text-shadow: black 3px 3px 3px;
+    background-color: var(--cl-indian-red);
+    color: var(--cl-light1);
+    text-shadow: var(--cl-dark1) 3px 3px 3px;
   }
   a::selection {
-    color: yellow;
+    color: var(--cl-link3);
   }
 
-  /// Obal webu
+  /// Backgrounds
+
+  .article_review__summary ul>li,
+  .article_review__header div,
+  .filterbar,
+  header.header,
+  blockquote,
+  .listing__separator *,
   .page-wrapper {
-    background-color: $cl-dark;
-  }
-  strong {
-    color: $cl-light;
+    background-color: var(--cl-dark1)!important;
   }
 
-  /// Menu
-  header {
-    background-color: $cl-dark;
-    .container {
-      h1 {
-        a {
-          /// Logo Indian
-          svg {
-            path:not(:last-of-type) {
-                fill: $cl-verylight!important;
-              }
-          }
-          // Bile pozadi za raketnou 
-          &:before {
-            content: ' ';
-            color: white;
-            background: white;
-            display: block;
-            width: 25px;
-            height: 27px;
-            position: absolute;
-            top: 20px;
-            left: 5px;
-            z-index: -10;
-          }
-        }
-      }
-      .header__overlayable {
-        .header__menu {
-          a {
-            &:not(:hover) {
-              color: $cl-light;
-            }
-            &:hover {
-              color: $cl-link;
-            }
-          }
-          li.active > a {
-            color: $cl-link;
-          }
-          ul {
-            background-color: $cl-dark;
-          }
-        }
-      }
-      .droppanel-panel {
-        background-color: $cl-dark;
-        a {
-          color: $cl-light;
-          &:hover {
-            color: $cl-link;
-          }
-        }
-        .droppanel-header {
-          strong {
-            color: $cl-verylight;
-          }
-        }
-        .droppanel-buttons {
-          a {
-            color: $cl-dark;
-          }
-        }
-      }
-      .header__social {
-        ul {
-          background-color: $cl-dark;
-          a:not(:hover) {
-            color: $cl-light;
-          }
-        }
+  .episodebox,
+  #mobileMenu,
+  a.person,
+  .article-body,
+  .articlebox, 
+  .articlebox__content, 
+  .panel,
+  .article {
+    background-color: var(--cl-dark2) !important;
+  }
+
+  /// Foregrounds
+
+  .panel_reviews__score {
+    color: var(--cl-dark1) !important;
+  }
+  
+  .articlebox__footer__released,
+  .panel__item.panel__item--image .panel_reviews__score {
+    color: var(--cl-light1) !important;
+  }
+
+  .episodebox,
+  blockquote,
+  .article-body,
+  .article-body strong,
+  .articlebox, 
+  .articlebox__content, 
+  .articlebox__footer,
+  .panel,
+  .panel small,
+  .panel em,
+  .article {
+    color: var(--cl-light2) !important;
+  }
+
+  // Links
+
+  .episodebox__number,
+  #mobileMenu,
+  .article__header,
+  .article__authors,
+  .panel,
+  .article__footer,
+  .article-body {
+    a {
+      &:not(.btn):hover {
+        color: var(--cl-link2) !important;
       }
     }
   }
-  #mobileMenu {
-    background-color: $cl-dark;
-    .header__menu {
-      &>li {
-        &>a {
-          color: $cl-light;
-        }
-        &.active {
-          &>a {
-            color: $cl-link;
-          }
-        }
-        &:hover {
-          &>a {
-            color: $cl-link;
-          }
-        }
+  
+  .episodebox__number,
+  #mobileMenu,
+  .article__header,
+  .article__authors,
+  .articlebox,
+  .panel,
+  .article__footer {
+    a {
+      &:not(:hover) {
+        color: var(--cl-light2) !important;
       }
     }
   }
 
-  /// Hlavni obsah (+ obsah Modal dialogu)
-  .container, .modal-dialog {
-    .page {
-      .box {
-        background-color: $cl-verydark;
-        color: $cl-light;
-        p, strong, small, h4.fancy {
-          color: $cl-light;
-        }
-      }
-      .sidemenu {
-        :not(.active) { 
-          a:not(:hover) {
-            color: $cl-light;
-            background-color: $cl-verydark;
-          }
-        }
-      } 
-      .page-left {
-        /// Filtry
-        .filterbar {
-          strong {
-            color: $cl-indianred;
-          }
-        }
-        .bar {
-          strong {
-            color: $cl-dark;
-          }
-        }
-        /// Clanky
-        .article {
-          background-color: $cl-verydark;
-          color: $cl-light;
-          .article-body {
-            color: $cl-light;
-            background-color: $cl-verydark;
-          }
-          .article__author {
-            strong {
-              color: $cl-dark;
-            }
-          }
-          .article__header, .article__footer, .article__review_verdict {
-            a:not(.btn) {
-              color: $cl-light;
-            }
-            p {
-              color: $cl-light;
-            }
-          }
-          .article__review {
-            color: $cl-light;
-            .article_review__header, .article_review__summary {
-              color: $cl-dark;
-            }
-            .article_review__footer {
-              img {
-                filter: invert(1) hue-rotate(180deg) saturate(3);
-              }
-            }
-          }
-          .article__authors {
-            color: $cl-dark;
-          }
-        }
-        /// Diskuze / Komentare
-        .box.comments {
-          .comment-content {
-            h4 {
-              a:last-of-type {
-                color: $cl-verylight;
-              }
-            }
-          }
-          .comment-pinned {
-            background-color: $cl-verydarkred;
-          }
-        }
-        /// Hracske recenze /// TODO > design nesedi ke zbytku webu asi se jeste zmeni.
-        .usergamereview {
-          color: $cl-light;
-        }
-        .usergamereview-disclaimer {
-          color: $cl-light;
-        }
-        /// Kalendar
-        .panel {
-          background-color: $cl-verydark;
-          color: $cl-light;
-          a.calendar-day {
-            color: $cl-verylight;
-          }
-          .box-calendar {
-            th {
-              background-color: $cl-dark;
-              color: $cl-verylight;
-            }
-          }
-        }
-      }
-      /// Bocni panel webu - a jeho obsah
-      .page-right {
-        .panel {
-          background-color: $cl-verydark;
-          color: $cl-light;
-          .icon-platform {
-            filter: invert(1);
-          }
-          a.dark {
-            color: $cl-light!important;
-          }
-          .panel__cover_menu {
-            a {
-              color: $cl-light;
-            }
-            a:not(:hover) {
-              strong {
-                color: $cl-light;
-              }
-            }
-          }
-          .panel__item:not(.panel__item--image) {
-            a:not(:hover) {
-              color: $cl-light;
-              .panel_reviews__score {
-                color: $cl-dark;
-              }
-            }
-          } 
-          .panel__menu, .panel__intro, .panel_moderators {
-            a:not(:hover) {
-              color: $cl-light;
-            }
-          }
-          .panel__reviews {
-            color: $cl-dark;
-          }
-        }
-        .panel--solid-blue {
-          background-color: $cl-verydarkblue;
-        }
-        .panel--solid {
-          background-color: $cl-verydarkred;
-        }
-        .sidebox {
-          background-color: $cl-verydark;
-          color: $cl-light;
-          .sidebox-segments .sidebox-segment-list-streams ul li strong>a:not(:hover) {
-            color: $cl-light;
-          }
-        }
-      }
+  // Hlavni stranka - najeti na clanek
+  .episodebox:hover,
+  .articlebox:hover {
+    h3 a {
+      color: var(--cl-link2) !important;
     }
+    // &[data-show="top5"] h3 a {
+    //   color: rgb(0, 140, 255) !important;
+    // }
+    // &[data-show="liveplay"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="hardware"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="indian"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="90vterin"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="vkapse"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="tnt-tipy-triky"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="showtime"] h3 a {
+    //   color: ??? !important;
+    // }
+    // &[data-show="flashback"] h3 a {
+    //   color: ??? !important;
+    // }
+  }
 
-    /// Boxy(nahledy) s clanky, recenze, porady
-    .articlebox, .episodebox {
-      background-color: $cl-verydark;
-      color: $cl-light;
+  // Komentare
+  .panel .comment {
+    // Like/Dislike btn
+    .comment__rewards a:not(:hover) {
+      color: var(--cl-dark1) !important;
+    }
+    // Jmena
+    .comment__header {
       a:not(:hover) {
-        color: $cl-light;
-        &.btn {
-          color: $cl-dark;
-        }
-      }
-      .articlebox__content {
-        .articlebox__review_summary {
-          color: $cl-dark;
-        }
-        .articlebox__footer__released {
-          color: $cl-light;
-        }
-        
-        .articlebox__score {
-          a:not(:hover) { 
-            color: $cl-darkred;
-          }
-        }
-      }
-    }
-    /// Boxy s horizontalnim razenim 
-    .articlebox--carousel, .articlebox--contest, .articlebox--grid {
-      .articlebox__content {
-        background-color: $cl-verydark;
-        .articlebox__footer__released {
-          color: $cl-light;
-        }
-      }
-    }
-    /// Souteze - ukoly, atd.
-    #snippet--bonuses {
-      ul, small {
-        color: $cl-verydark;
-      }
-    }
-    /// Profil uzivatele
-    .profile {
-      .profile-intro {
-        .profile-about { 
-          h3 {
-            color: $cl-verylight;
-            small {
-              // color: $cl-light;
-            }
-          }
-        }
+        color: var(--cl-link1) !important;
       }
     }
   }
-  /// Modal dialog - Kalendar
-  .modal-dialog {
-    header {
-      color: $cl-verylight;
-      background-color: $cl-indianred;
-      button {
-        color: $cl-verylight;
-      }
-    }
-    .modal-body {
-      background-color: $cl-dark!important;
-    }
-    .modal-footer {
-      background-color: $cl-dark;
-    }
+  #emoji_panel {
+    background-color: var(--cl-dark1) !important;
   }
-} // body
 
-// EndOfFile: src/main.scss
+  /// Reklama
+  // lehce ztmavit
+  iframe {
+    filter: brightness(0.6) contrast(1.3);
+  }
+  .article__cover > iframe {
+    filter: none;
+  }
+
+  /// Hlavni menu a filtry
+  .filterbar,
+  header {
+    ul {
+      span, a, ul>li>a {
+        color: var(--cl-light2);
+        background-color: var(--cl-dark1);
+      }
+    }
+    .droppanel-panel {
+        background-color: var(--cl-dark1);
+    }
+  }
+
+  /// Logo Indian
+  header.header {
+    h1 {
+      svg {
+        path:not(:last-of-type) {
+            fill: $cl-light1 !important;
+          }
+      }
+      // Bile pozadi za raketnou 
+      &:before {
+        content: ' ';
+        color: white;
+        background: white;
+        display: block;
+        width: 25px;
+        height: 27px;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        z-index: -10;
+      }
+    }
+  }
+
+
+}

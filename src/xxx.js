@@ -14,12 +14,15 @@ function setStatus(value=1) {
  * EN: Function adds or removes class (dark) in body element according to set status.
  */
 function classNow() {
-  var darkSkinClass = "dark"; 
+  var darkSkinClass = "no-theme"; 
   var bodyClassList = document.body.classList; 
-  if(localStorage.status == 1) {
+  if(localStorage.status == 0) {
     bodyClassList.add(darkSkinClass); 
   }
-  else if (localStorage.status == 0) {
+  else if (localStorage.status == 1) {
+    bodyClassList.remove(darkSkinClass);
+  }
+  else {
     bodyClassList.remove(darkSkinClass);
   }
 }
